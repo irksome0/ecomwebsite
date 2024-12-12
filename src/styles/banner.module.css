@@ -1,0 +1,70 @@
+
+.banner{
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: left;
+
+    background-color: #000;
+    color: #fff;
+
+    padding: 16px 64px;
+
+    font-family: "Poppins", sans-serif;
+}
+
+.banner div{
+    width: 450px;
+}
+
+.banner button{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+
+    border: none;
+    background-color: transparent;
+    
+    color: #fff;
+    font-family: "Poppins",sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    padding: 0;
+}
+
+.banner button div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    gap: 5px;
+    
+    width: 100px;
+
+    border: none;
+    
+    background-color: transparent;
+}
+
+.banner button div hr{
+    margin: 0;
+}
+
+.banner h1{
+    font-family: "Inter",sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    max-width: 60%;
+}
+
+.product_information{
+    display: inline-flex;
+    gap: 20px;
+    
+    margin-top: 50px;
+    
+    align-items: center;
+    
+    font-weight: 400;
+}
