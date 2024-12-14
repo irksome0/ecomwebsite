@@ -31,6 +31,8 @@
     font-weight: 500;
 
     padding: 0;
+
+    cursor: pointer;
 }
 
 .banner button div{
@@ -49,6 +51,7 @@
 
 .banner button div hr{
     margin: 0;
+    width: 80%;
 }
 
 .banner h1{

@@ -1,10 +1,10 @@
 
 import styles from  "../styles/navigation.module.css"
 
-import searchIcon from "../assets/search-icon.svg"
-import wishlistIcon from "../assets/wishlist-icon.svg"
-import cartIcon from "../assets/cart-icon.svg"
-import userIcon from "../assets/user-icon.svg"
+import wishlistIcon from "../assets/navigation/wishlist-icon.svg"
+import cartIcon from "../assets/navigation/cart-icon.svg"
+import userIcon from "../assets/navigation/user-icon.svg"
+import Searchbar from "./Searchbar"
 
 export default function Navigation(){
     return(
@@ -17,10 +17,7 @@ export default function Navigation(){
                 <a href="/signup">Sign Up</a>
             </nav>
             <div className={styles.additional_navigation}>
-                <div className={styles.searchbar}>
-                    <input type="text" placeholder="What are you looking for? "/>
-                    <img src={searchIcon} alt="Search"/>
-                </div>
+                <Searchbar/>
                 <div className={styles.icons_wrapper}>
                     <img src={wishlistIcon} alt="Wishlist" />
                     <img src={cartIcon} alt="Cart" />

@@ -1,14 +1,14 @@
 
 import styles from "../styles/footer.module.css"
 
-import sendIcon from "../assets/send-icon.svg"
-import qrcode from "../assets/qrcode.png"
-import googlePlayBanner from "../assets/download-googleplay.png"
-import appStoreBanner from "../assets/download-appstore.png"
-import facebookIcon from "../assets/facebook-icon.svg"
-import instagramIcon from "../assets/instagram-icon.svg"
-import linkedinIcon from "../assets/linkedin-icon.svg"
-import twitterIcon from "../assets/twitter-icon.svg"
+import sendIcon from "../assets/footer/send-icon.svg"
+import qrcode from "../assets/footer/qrcode.png"
+import googlePlayBanner from "../assets/footer/download-googleplay.png"
+import appStoreBanner from "../assets/footer/download-appstore.png"
+import facebookIcon from "../assets/footer/facebook-icon.svg"
+import instagramIcon from "../assets/footer/instagram-icon.svg"
+import linkedinIcon from "../assets/footer/linkedin-icon.svg"
+import twitterIcon from "../assets/footer/twitter-icon.svg"
 
 export default function Footer(){
     return(

@@ -1,6 +1,6 @@
 
 import styles from "../styles/banner.module.css"
-import shopNowIcon from "../assets/shopnow-icon.svg"
+import shopNowIcon from "../assets/banner/shopnow-icon.svg"
 
 export default function Banner(props){
     return(<section className={styles.banner}>
