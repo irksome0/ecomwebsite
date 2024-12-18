@@ -6,7 +6,14 @@ import cartIcon from "../assets/navigation/cart-icon.svg"
 import userIcon from "../assets/navigation/user-icon.svg"
 import Searchbar from "./Searchbar"
 
+const parseFromLocalStorage = (name) => {
+    return JSON.parse(localStorage.getItem(name)).length ?? 0
+}
+
 export default function Navigation(){
+    const wishlistItems = parseFromLocalStorage("wishlist")
+    const cartItems = parseFromLocalStorage("cart")
+
     return(
         <header className={styles.header}>
             <a className={styles.logo} href="/">Exclusive</a>
@@ -19,8 +26,19 @@ export default function Navigation(){
             <div className={styles.additional_navigation}>
                 <Searchbar/>
                 <div className={styles.icons_wrapper}>
-                    <img src={wishlistIcon} alt="Wishlist" />
-                    <img src={cartIcon} alt="Cart" />
+        
+                    <div className={styles.icon}>
+                        <div style={{position:"absolute"}}>
+                            {wishlistItems === 0 ? " " : <span>{wishlistItems > 9 ? "9+" : wishlistItems}</span>}
+                        </div>
+                        <img src={wishlistIcon} alt="Wishlist" />
+                    </div>
+                    <div className={styles.icon}>
+                        <div style={{position:"absolute"}}>
+                            {cartItems === 0 ? " " :<span>{cartItems > 9 ? "9+" : cartItems}</span>}
+                        </div>
+                        <img src={cartIcon} alt="Cart" />
+                    </div>
                     <img src={userIcon} alt="User" />
                 </div>
             </div>
