@@ -10,6 +10,8 @@ import Categories from './components/Categories';
 import Products from './components/Products';
 import Featured from './components/Featured';
 
+import productsData from "./assets/products.json"
+
 function App() {
   return (
     <>
@@ -19,7 +21,7 @@ function App() {
           <hr/>
         <Section name="Categories" title="Browse By Category" body={<Categories/>}/>
           <hr/>
-        <Section name="Our Products" title="Explore Our Products" body={<Products/>}/>
+        <Section name="Our Products" title="Explore Our Products" body={<Products data={productsData}/>}/>
           <hr/>
         <Section name="Featured" title="New Arrival" body={<Featured/>}/>
       </main>
