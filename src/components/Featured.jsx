@@ -37,7 +37,7 @@ export default function Featured(){
             {arrival.map((el,i) => {
                 if(el.type === "big"){
                     return(
-                        <div className={styles.big_banner} style={{backgroundImage:`url(${el.productImageUrl})`}}>
+                        <div key={el.name} className={styles.big_banner} style={{backgroundImage:`url(${el.productImageUrl})`}}>
                              <h4>{el.name}</h4>
                              <span>{el.description}</span>
                             <button className={styles.shop_now_button}> 
@@ -48,7 +48,7 @@ export default function Featured(){
                     )
                 }else if(el.type === "medium"){
                     return(
-                        <div className={styles.medium_banner} style={{backgroundImage:`url(${el.productImageUrl})`}}>
+                        <div key={el.name} className={styles.medium_banner} style={{backgroundImage:`url(${el.productImageUrl})`}}>
                              <h4>{el.name}</h4>
                              <span>{el.description}</span>
                             <button className={styles.shop_now_button}> 
@@ -59,7 +59,7 @@ export default function Featured(){
                     )                    
                 }else{
                     return(
-                        <div className={styles.small_banner} style={{gridColumnStart:i+1,gridColumnEnd:i+1, backgroundImage:`url(${el.productImageUrl})`}}>
+                        <div key={el.name + i} className={styles.small_banner} style={{gridColumnStart:i+1,gridColumnEnd:i+1, backgroundImage:`url(${el.productImageUrl})`}}>
                             <h4>{el.name}</h4>
                             <span>{el.description}</span>
                             <button className={styles.shop_now_button}> 
