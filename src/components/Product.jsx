@@ -38,21 +38,12 @@ export default function Product(props){
                     onClick={handleWishlist}
                     />
                 </div>
-                {isInCart
-                ?
-                (
-                    <button
-                    className={styles.cartButton}
-                    onClick={() => handleCart()}>Remove From Cart</button>
-                )
-                :
-                (
-                    <button
+                <button
                     className={styles.cartButton}
                     hidden={!isHovered}
-                    onClick={() => handleCart()}>Add To Cart</button>
-                )
-                }
+                    onClick={() => handleCart()}>
+                    {isInCart ? 'Remove From Cart' : 'Add To Cart'}
+                </button>
             </div>
             <div className={styles.product_info}>
                 <h4>{props.name}</h4>
