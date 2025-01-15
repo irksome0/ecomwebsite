@@ -13,11 +13,17 @@ export default function Product(props){
     }
     
     const handleWishlist = () => {
+        if(isInCart && !isWishlisted){
+            handleCart(props.name)
+        }
         setIsWishlisted(prev => !prev)
         props.handleWishlist(props.name)
     }
 
     const handleCart = () => {
+        if(isWishlisted && !isInCart){
+            handleWishlist(props.name)
+        }
         setIsInCart(prev => !prev)
         props.handleCart(props.name)
     }

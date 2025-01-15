@@ -1,0 +1,12 @@
+[
+    {"name": "Breed Dry Dog Food", "price": 100, "imageUrl": "/images/products/dog-food.png"},
+    {"name": "CANON EOS DSLR Camera", "price": 360, "imageUrl": "/images/products/camera.png"},
+    {"name": "ASUS FHD Gaming Laptop", "price": 700, "imageUrl": "/images/products/laptop.png"},
+    {"name": "Jr.Zoom Soccer Cleats", "price": 1160, "imageUrl": "/images/products/cleats.png"},
+    {"name": "Quilted Satin Jacket", "price": 660, "imageUrl": "/images/products/jacket.png"},
+    {"name": "Jr.Zoom Soccer Cleats", "price": 1160, "imageUrl": "/images/products/cleats.png"},
+    {"name": "GP11 Shooter USB Gamepad", "price": 660, "imageUrl": "/images/products/gamepad.png"},
+    {"name": "Jr.Zoom Soccer Cleats", "price": 1160, "imageUrl": "/images/products/cleats.png"},
+    {"name": "GP11 Shooter USB Gamepad", "price": 660, "imageUrl": "/images/products/gamepad.png"}
+  ]
+  
