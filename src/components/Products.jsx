@@ -2,14 +2,11 @@ import Searchbar from "./Searchbar";
 import styles from "../styles/sections.module.css";
 import { useEffect, useState } from "react";
 import Product from "./Product";
-
-const parseFromLocalStorage = (name) => {
-  return JSON.parse(localStorage.getItem(name)) ?? [];
-};
+import { parseFromLocalStorage } from "../utils/parseFromLocalStorage";
 
 export default function Products(props) {
-  const [cart, setCart] = useState(parseFromLocalStorage("cart") ?? []);
-  const [wishlist, setWishlist] = useState(parseFromLocalStorage("wishlist") ?? []);
+  const [cart, setCart] = useState(parseFromLocalStorage("cart"));
+  const [wishlist, setWishlist] = useState(parseFromLocalStorage("wishlist"));
   const [searchQuery, setSearchQuery] = useState(localStorage.getItem("searchQuery") || "");
   const [products, setProducts] = useState(props.data);
 
@@ -22,6 +19,7 @@ export default function Products(props) {
     }
     setWishlist(newValue);
     localStorage.setItem("wishlist", JSON.stringify(newValue));
+    document.location.reload();
   };
 
   const handleItemInCart = (name) => {
@@ -42,19 +40,21 @@ export default function Products(props) {
 
   useEffect(() => {
     localStorage.setItem("searchQuery", searchQuery);
-    handleSearch();
+    if(props.type !== "wishlist")
+      handleSearch();
   }, [searchQuery]);
-
+  
   return (
     <div className={styles.products_section}>
-      <Searchbar search={(q) => setSearchQuery(q)} searchQuery={searchQuery} />
+      <Searchbar search={(q) => setSearchQuery(q)} hidden={props.type === "wishlist"} searchQuery={searchQuery} />
       <div className={styles.products_container}>
         {products.map((product, index) => {
-          if (index >= 8) return null;
+          if (index >= 8 && props.type !== "wishlist") return null;
           return (
             <Product
               key={product.name + index}
               name={product.name}
+              type={props.type}
               price={product.price}
               imageUrl={product.imageUrl}
               inWishlist={wishlist.includes(product.name)}
@@ -65,7 +65,7 @@ export default function Products(props) {
           );
         })}
       </div>
-      {products.length >= 8 ? (
+      {products.length >= 8 && props.type !== "wishlist" ? (
         <button className={styles.view_products_button}>View All Products</button>
       ) : null}
     </div>

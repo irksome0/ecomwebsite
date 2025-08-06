@@ -1,0 +1,157 @@
+
+main{
+    padding: 80px 135px;
+    gap:0px;
+}
+.title_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin:20px 0 0 0px;
+}
+.title_container h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    
+    line-height: 26px;
+}
+
+table{
+    font-family: "Poppins",sans-serif;
+    font-size:16px;
+    line-height: 24px;
+    
+    border-spacing: 0px 40px;
+}
+tr{
+    border-radius: 4px;
+    box-shadow: 0px 1px 13px #0000000D;
+}
+td{
+    display: flex;
+    align-items: center;
+
+    padding: 24px 40px; 
+    gap:18px;
+}
+th{
+    text-align: center;
+    font-weight: 400;
+
+    padding: 24px 40px; 
+}
+th:nth-child(1){
+    text-align: left;
+}
+th:nth-child(4){
+    text-align: right;
+}
+th input{
+    border: 1.5px solid #00000066;
+    border-radius: 4px;
+
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    padding: 10px 12px;
+    width: 40px;
+}
+th input::-webkit-inner-spin-button{
+    opacity: 1;
+}
+.primary_button{
+    text-transform: capitalize;
+
+    padding: 16px 48px;
+    border: 1px solid rgba(0,0,0,0,.5);
+    border-radius: 4px;
+
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color:#000;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+.primary_button:hover{
+    background-color: rgba(0,0,0,.05);
+}
+.secondary_button{
+    font-family: "Poppins",sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+
+    padding: 16px 48px;
+    background-color: #DB4444;
+
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 56px;
+}
+.cart_total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top:80px;
+}
+.coupon_container{
+    display: inline-flex;
+    gap: 16px;
+}
+.coupon_field{
+    padding: 16px 24px;
+    max-height: 20px;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+.cart_total_container{
+    display: flex;
+    flex-direction: column;
+
+
+    border:1.5px solid #000;
+    border-radius: 4px;
+
+    padding: 24px 32px;
+}
+.cart_total_container h3{
+    font-family: "Poppins",sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+
+    text-transform: capitalize;
+}
+.cart_total_subcontainer{
+    display: inline-flex;
+    justify-content: space-between;
+
+    padding: 16px 0;
+    width: 30svw;
+}
+.empty_container{
+    text-align: center;
+
+    font-weight: 500;
+    font-size: 24px;
+
+    margin: 80px 0;
+}

@@ -112,3 +112,7 @@
 
     background-color: #DB4444;
 }
+.icon_counter{
+    position: absolute;
+    pointer-events: none;
+}

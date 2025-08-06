@@ -5,39 +5,37 @@ import wishlistIcon from "../assets/navigation/wishlist-icon.svg"
 import cartIcon from "../assets/navigation/cart-icon.svg"
 import userIcon from "../assets/navigation/user-icon.svg"
 import Searchbar from "./Searchbar"
-
-const parseFromLocalStorage = (name) => {
-    return JSON.parse(localStorage.getItem(name)).length ?? 0
-}
+import {Link} from "react-router-dom"
+import { parseFromLocalStorage } from "../utils/parseFromLocalStorage"
 
 export default function Navigation(){
-    const wishlistItems = parseFromLocalStorage("wishlist")
-    const cartItems = parseFromLocalStorage("cart")
+    const wishlistItems = parseFromLocalStorage("wishlist").length
+    const cartItems = parseFromLocalStorage("cart").length
 
     return(
         <header className={styles.header}>
             <a className={styles.logo} href="/">Exclusive</a>
             <nav className={styles.nav}>
-                <a className={styles.current_page} href="/">Home</a>
-                <a href="/contact">Contact</a>
-                <a href="/about">About</a>
-                <a href="/signup">Sign Up</a>
+                <Link to="/"><p className={styles.current_page} href="/">Home</p></Link>
+                <p href="/contact">Contact</p>
+                <p href="/about">About</p>
+                <p href="/signup">Sign Up</p>
             </nav>
             <div className={styles.additional_navigation}>
                 <Searchbar/>
                 <div className={styles.icons_wrapper}>
         
                     <div className={styles.icon}>
-                        <div style={{position:"absolute"}}>
+                        <div className={styles.icon_counter}>
                             {wishlistItems === 0 ? " " : <span>{wishlistItems > 9 ? "9+" : wishlistItems}</span>}
                         </div>
-                        <img src={wishlistIcon} alt="Wishlist" />
+                        <Link to="/wishlist"><img src={wishlistIcon} alt="Wishlist" /></Link>
                     </div>
                     <div className={styles.icon}>
-                        <div style={{position:"absolute"}}>
+                        <div className={styles.icon_counter}>
                             {cartItems === 0 ? " " :<span>{cartItems > 9 ? "9+" : cartItems}</span>}
                         </div>
-                        <img src={cartIcon} alt="Cart" />
+                        <Link to="/cart"><img src={cartIcon} alt="Cart" /></Link>
                     </div>
                     <img src={userIcon} alt="User" />
                 </div>
